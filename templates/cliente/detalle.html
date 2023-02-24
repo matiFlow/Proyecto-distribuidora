@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de empleados</h1>
+
+    <ul>
+        {%for cliente in clientes%}
+            <li>{{cliente.apellido}},{{cliente.nombre}},{{cliente.dni}},{{cliente.telefono}}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

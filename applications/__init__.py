@@ -1,0 +1,1 @@
+#Este archivo sirve para que django detecte las aplicaciones que se le a agregado

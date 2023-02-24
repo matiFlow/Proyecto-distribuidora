@@ -1,0 +1,9 @@
+body {
+    background: url(https://coding-tube.com/wp-content/uploads/2022/06/flat-mountains.png);
+}
+
+.lista_clientes{
+    display: grid;
+    border: 1px solid rgb(158, 194, 81);
+    grid-template-columns: repeat(3, 1fr);
+}

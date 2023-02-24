@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center display-4 font-weight-bold font-italic"> Agregar un cliente </h1>
+
+<div class="titulo" >
+    <form class="form-control" action ="POTS">{% csrf_token %}
+        <div class="formulario_cliente" style="display: flex;">
+            {{form.as_p}}
+        </div> 
+        <input type="submit" class="btn btn-primary" value="Alta">
+    </form> 
+</div>
+
+
+{% endblock content %}
