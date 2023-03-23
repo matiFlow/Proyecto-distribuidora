@@ -40,7 +40,7 @@ class ProductoCreateView(CreateView):
     
 class ProductoUpdateView(UpdateView):
     model = Producto
-    template_name = "producto/update.html"
+    template_name = "producto/modificar.html"
     form_class = ProductoForm
     success_url = reverse_lazy('Producto.app: Listado de productos')
     

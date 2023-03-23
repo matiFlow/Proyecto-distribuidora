@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card text-center align-items-center"width: 15rem;">
+    <h1> Modificar un producto </h1>
+    <form action="POTS">{% csrf_token %}
+        {{form.as_p}}
+        <button><input type="submit" value="Alta"></button>
+        <button><a href="{% url 'Producto.app:Listado de productos'%}">Volver</a></button>
+    </form> 
+  </div>
+
+{% endblock content %}
+
