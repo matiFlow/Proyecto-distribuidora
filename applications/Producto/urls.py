@@ -22,19 +22,19 @@ urlpatterns = [
         name="Crear producto"
     ),
     path(
-        "producto/detalle/pk/",
+        "producto/detalle/<pk>/",
         views.ProductoDetailView.as_view(),
         name="Detalle del producto"
     ),
 
     path(
-        "producto/delete/",
+        "producto/delete/<pk>/",
         views.ProductoDeleteView.as_view(),
         name="Eliminar producto"
     ),
 
     path(
-        "producto/modificar/pk/",
+        "producto/modificar/<pk>/",
         views.ProductoUpdateView.as_view(),
         name='Modificar producto'
     ),

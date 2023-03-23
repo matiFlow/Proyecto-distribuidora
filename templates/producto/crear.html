@@ -3,9 +3,14 @@
 
 <h1> Alta nuevo producto </h1>
 
-<form action="POTS">{% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Alta">
-</form> 
+<div>
+    <form class="form-control text-center" method ="POTS">{% csrf_token %}
+        <div class="formulario_producto" style="display: block;">
+            {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Alta">
+            <a href=""></a>
+        </div> 
+    </form> 
+</div>
 
 {% endblock content %}

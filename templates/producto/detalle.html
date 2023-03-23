@@ -4,8 +4,9 @@
     <h1>Lista de empleados</h1>
 
     <ul>
-        {%for producto in productos%}
-            <li>{{producto.proveedores}},{{producto.tipo}},{{producto.marca}},{{producto.precio}}, {{producto.stock_actual}}, {{producto.stock_minimo}}</li>
-        {% endfor %}
+        <li>{{detalle.marca}}</li>
+        <li>{{detalle.precio}}</li>
+        <li>{{detalle.stock_actual}}</li>
+        <li>{{detalle.stock_minimo}}</li>
     </ul>
 {% endblock content %}

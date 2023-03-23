@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="POST">{% csrf_token %} action =      <!-- Permite prevenir falsificaciónes de solicitudes entre sitios.-->
+        <p>Nombre: {{delete_detail.nombre}}</p>
+    </form>
+{% endblock content %}

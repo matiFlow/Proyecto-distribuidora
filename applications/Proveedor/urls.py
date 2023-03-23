@@ -22,19 +22,19 @@ urlpatterns = [
         name="Crear proveedor"
     ),
     path(
-        "proveedor/detalle/pk/",
+        "proveedor/detalle/<pk>/",
         views.ProductoDetailView.as_view(),
         name="Detalle del proveedor"
     ),
 
     path(
-        "proveedor/delete/",
+        "proveedor/eliminar/<pk>/",
         views.ProveedorDeleteView.as_view(),
         name="Eliminar proveedor"
     ),
 
     path(
-        "proveedor/modificar/pk/",
+        "proveedor/modificar/<pk>/",
         views.ProveedorUpdateView.as_view(),
         name='Modificar proveedor'
     ),

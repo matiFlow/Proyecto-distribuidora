@@ -34,7 +34,7 @@ class ClienteCreateView(CreateView):
     model = Cliente
     template_name = "cliente/crear.html"
     form_class = ClienteForm
-    success_url = reverse_lazy('empleado_app: Lista de clientes')
+    success_url = reverse_lazy('Cliente.app: Lista de clientes')
     
     def  form_valid(self, form):
         return super(ClienteCreateView, self).form_valid(form)
@@ -44,7 +44,7 @@ class ClienteUpdateView(UpdateView):
     model = Cliente
     template_name = "cliente/modificar.html"
     form_class = ClienteForm
-    success_url = reverse_lazy('app_name: Lista de clientes')
+    success_url = reverse_lazy('Cliente.app: Lista de clientes')
     
     def  form_valid(self, form):
         cl = form.save(comit=False)
@@ -54,7 +54,7 @@ class ClienteUpdateView(UpdateView):
 
 class ClienteDeleteView(DeleteView, DetailView):
     model = Cliente
-    template_name = "delete.html"
+    template_name = "cliente/eliminar.html"
 
 
 
@@ -62,9 +62,8 @@ class ClienteDetailView(DetailView):
     model = Cliente
     template_name = "cliente/detalle.html"
     ordering = 'apellido'
-    context_object_name = 'clientes'
+    context_object_name = 'detalle'
     
-
 
 
 

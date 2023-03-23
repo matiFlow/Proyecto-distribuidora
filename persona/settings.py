@@ -129,7 +129,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = 'templates/static/' #Es para decirle donde van a estar los archivos estaticos o archivos html
+STATIC_URL = '/static/' #Es para decirle donde van a estar los archivos estaticos o archivos html
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center display-4 font-weight-bold font-italic"> Agregar compra </h1>
+
+<div>
+    <form class="form-control text-center" action ="POTS">{% csrf_token %}
+        <div class="formulario_compra" style="display: block;">
+            {{form.as_p}}
+        </div> 
+        <input type="submit" class="btn btn-primary" value="Alta">
+        <button><a href=""></a></button>
+    </form> 
+</div>
+
+
+{% endblock content %}

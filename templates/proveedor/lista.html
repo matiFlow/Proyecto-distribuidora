@@ -1,11 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Lista de proveedores</h1>
+<h1 class= "titulo_proveedor text-center" style="align-items: center;">Lista de proveedores</h1>
 
-    <ul>
+    <div class="lista_proveedor text-center">
+        <h2><strong>Apellidos</strong></h1>
+        <h2><strong>Nombres</strong></h2>
+        <h2><strong>Acciones</strong></h2>
         {%for proveedor in proveedores%}
-        <li>{{proveedor.nombre}},{{proveedor.apellido}},{{proveedor.cuit}},{{proveedor.telefono}}</li>
+        <p>{{proveedor.apellido}}</p>
+        <p>{{proveedor.nombre}}</p>
+        <p>
+            <a class="btn btn-primary" href="{% url 'Proveedor.app:Detalle del proveedor' proveedor.id%}">Ver</a>
+
+            <a class="btn btn-primary" href="{% url 'Proveedor.app:Modificar proveedor' proveedor.id%}">Modificar</a>
+
+            <a class="btn btn-primary" href="{% url 'Proveedor.app:Eliminar proveedor' proveedor.id%}">Eliminar</a>
+        </p>
+
         {% endfor %}
-    </ul>
+        <a class="btn btn-primary text-center" href="{% url 'Proveedor.app:Crear proveedor'%}">Crear un nuevo proveedor</a>
+    </div>
 {% endblock content %}

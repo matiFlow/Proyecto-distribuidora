@@ -2,13 +2,12 @@
 {% block content %}
 
 <div class="card text-center align-items-center"width: 15rem;">
-    <h1> Modificar un cliente </h1>
+    <h1> Modificar un proveedor </h1>
     <form action="POTS">{% csrf_token %}
         {{form.as_p}}
         <button><input type="submit" value="Alta"></button>
-        <button><a href="{% url 'Cliente.app:Listado de clientes'%}">Volver</a></button>
+        <button><a href="{% url 'Proveedor.app:Listado de proveedores'%}">Volver</a></button>
     </form> 
   </div>
 
 {% endblock content %}
-

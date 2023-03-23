@@ -1,9 +1,10 @@
 {% block content %}
-    <h1>Lista de empleados</h1>
+    <h1>Detalle</h1>
 
     <ul>
-        {%for proveedor in proveedores%}
-            <li>{{proveedor.nombre}},{{proveedor.apellido}},{{proveedor.cuit}},{{proveedor.telefono}}</li>
-        {% endfor %}
+        <li>{{proveedor.nombre}}</li>
+        <li>{{proveedor.apellido}}</li>
+        <li>{{proveedor.cuit}}</li>
+        <li>{{proveedor.telefono}}</li>
     </ul>
 {% endblock content %}

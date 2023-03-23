@@ -1,7 +1,13 @@
 {% block content %}
 
     <form method = "GET">
-        
+        <input type="text" placeholder="Marca" id="kword" name="kword">
+        <input type="submit" value="Buscar">
     </form>
 
+<ul>
+    {%for producto in productos%}
+        <li>{{producto.tipo}}, {{producto.marca}}</li>
+    {% endfor %}
+</ul>
 {% endblock content %}

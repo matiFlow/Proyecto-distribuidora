@@ -1,11 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Lista de productos</h1>
-
-    <ul>
+    <h1 class= "titulo_productos" style="align-items: center;">Lista de productos</h1>
+    <div class="lista_productos text-center">
+        
+        <h2><strong>Categoria</strong></h1>
+        <h2><strong>Marca</strong></h2>
+        <h2><strong>En stock</strong></h2>
+        <h2><strong>Precio</strong></h2>
+        <h2><strong>Acciones</strong></h2>
         {%for producto in productos%}
-        <li>{{producto.proveedores}},{{producto.tipo}},{{producto.marca}},{{producto.precio}}, {{producto.stock_actual}}, {{producto.stock_minimo}}</li>
+        <p>{{producto.tipo}}</p>
+        <p>{{producto.marca}}</p>
+        <p>{{producto.stock_actual}}</p>
+        <p>{{producto.precio}}</p>
+        <p>
+            <a class= "btn btn-primary" href="{% url 'Producto.app:Detalle del producto' producto.id%}">Ver</a>
+            <a class= "btn btn-primary" href="{% url 'Producto.app:Modificar producto' producto.id%}">Modificar</a>
+            <a class= "btn btn-danger" href="{% url 'Producto.app:Eliminar producto' producto.id%}">Eliminar</a>
+        </p>
+        
         {% endfor %}
-    </ul>
+        
+    </div>
+
+    <div class="button_new_producto align-items=center">
+        <button class="boton_agregar_producto align-items= center"><a href="{% url 'Producto.app:Crear producto' %}">Crear un nuevo producto</a></button>
+    </div>
 {% endblock content %}
+

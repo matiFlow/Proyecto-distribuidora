@@ -2,20 +2,24 @@
 
 {% block content %}
 
-<h1 class= "titulo_clientes">Lista de clientes</h1>
+<h1 class= "titulo_clientes text-center">Lista de clientes</h1>
 
-    <div class="lista_clientes">
-        <h1><strong>Apellidos</strong></h1>
+    <div class="lista_clientes text-center">
+        <h2><strong>Apellidos</strong></h1>
         <h2><strong>Nombres</strong></h2>
         <h2><strong>Acciones</strong></h2>
         {%for cliente in clientes%}
         <p>{{cliente.apellido}}</p>
         <p>{{cliente.nombre}}</p>
-        <p><a href="{% url 'Cliente.app:Detalle del cliente' cliente.id%}">Ver</a>    
+        <p>
+            <a href="{% url 'Cliente.app:Detalle del cliente' cliente.id%}">Ver</a>
+            <a href="{% url 'Cliente.app:Modificar cliente' cliente.id%}">Modificar</a>
+            <a href="{% url 'Cliente.app:Eliminar cliente' cliente.id%}">Eliminar</a>
         </p>
 
         {% endfor %}
-        </ul>
+
+        <div class="boton_new_cliente align-items=center">
+        <button class="boton_agregar_cliente align-items= center"><a href="{% url 'Cliente.app:Crear Cliente'%}">Crear un nuevo cliente</a></button></div>
     </div>
-    
 {% endblock content %}

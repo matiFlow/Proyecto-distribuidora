@@ -32,7 +32,7 @@ class ProductoCreateView(CreateView):
     model = Producto
     template_name = "producto/crear.html"
     form_class = ProductoForm
-    success_url = reverse_lazy('app_name: Lista de productos')
+    success_url = reverse_lazy('Producto.app: Lista de productos')
     
     def  form_valid(self, form):
         return super(ProductoCreateView, self).form_valid(form)
@@ -42,7 +42,7 @@ class ProductoUpdateView(UpdateView):
     model = Producto
     template_name = "producto/update.html"
     form_class = ProductoForm
-    success_url = reverse_lazy('app_name: Lista de productos')
+    success_url = reverse_lazy('Producto.app: Listado de productos')
     
     def  form_valid(self, form):
         pr = form.save(comit=False)
@@ -50,12 +50,13 @@ class ProductoUpdateView(UpdateView):
         pr.save()
         return super(ProductoCreateView, self).form_valid(form)
 
-class ProductoDetailView(DetailView):
-    model = Producto
-    template_name = "producto/detalle.html"
-    ordering = 'tipo'
-    context_object_name = 'productos'
 
 class ProductoDeleteView(DeleteView, DetailView):
     model = Producto
     template_name = "delete.html"
+
+class ProductoDetailView(DetailView):
+    model = Producto
+    template_name = "producto/detalle.html"
+    ordering = 'tipo'
+    context_object_name = 'detalle'

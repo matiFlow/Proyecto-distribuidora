@@ -32,7 +32,7 @@ class ProveedorCreateView(CreateView):
     model = Proveedor
     template_name = "proveedor/crear.html"
     form_class = ProveedorForm
-    success_url = reverse_lazy('app_name: Lista de proveedores')
+    success_url = reverse_lazy('Proveedor.app: Listado de proveedores')
     
     def  form_valid(self, form):
         return super(ProveedorCreateView, self).form_valid(form)
@@ -40,9 +40,9 @@ class ProveedorCreateView(CreateView):
     
 class ProveedorUpdateView(UpdateView):
     model = Proveedor
-    template_name = "proveedor/update.html"
+    template_name = "proveedor/modificar.html"
     form_class = ProveedorForm
-    success_url = reverse_lazy('app_name: Lista de proveedor')
+    success_url = reverse_lazy('Proveedor.app: Listado de proveedores')
     
     def  form_valid(self, form):
         pr = form.save(comit=False)
@@ -59,7 +59,20 @@ class ProductoDetailView(DetailView):
 
 class ProveedorDeleteView(DeleteView, DetailView):
     model = Proveedor
-    template_name = "delete.html"
+    template_name = "eliminar.html"
+
+class BuscarProductoListView(ListView):
+    model = Proveedor
+    template_name = "prooveedor/buscar.html"
+    ordering = 'apellido'
+    context_object_name = 'prooveedores'
+
+    def get_queryset(self):
+        palabra_clave = self.request.GET.get('kword','')
+        lista = Proveedor.objects.filter(
+            apellido__icontains = palabra_clave
+        )
+        return lista
 
 
 

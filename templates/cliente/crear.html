@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
+<table class="table table-bordered>
 
 <h1 class="text-center display-4 font-weight-bold font-italic"> Agregar un cliente </h1>
 
-<div class="titulo" >
-    <form class="form-control" action ="POTS">{% csrf_token %}
-        <div class="formulario_cliente" style="display: flex;">
+    <form class="form-control text-center" method ="POTS">{% csrf_token %}
+        <div class="formulario_cliente" style="display: block;">
             {{form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Alta">
+            <button><a href="{% url 'Cliente.app:Listado de clientes'%}">Volver</a></button>
         </div> 
-        <input type="submit" class="btn btn-primary" value="Alta">
     </form> 
-</div>
+</table>
 
 
 {% endblock content %}
